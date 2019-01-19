@@ -2,7 +2,6 @@ import sklearn
 from sklearn import datasets
 import numpy as np
 from sklearn import preprocessing
-from sklearn import model
 
 
 house = sklearn.datasets.fetch_california_housing(data_home=None, download_if_missing=True, return_X_y=False)
@@ -13,10 +12,13 @@ y = house.target
 m = x.shape[0]
 n = x.shape[1]
 theta = np.ones(n)
-iteration = 10000
-alfa = 0.01
+iteration = 30000
+alfa = 10e-3
 x = preprocessing.normalize(x)
-model.fit(x, y)
+
+(m,n) = house.data.shape
+x = (house.data - np.resize(np.average(house.data,axis=0),(m,n)))/np.resize(np.std(house.data,axis=0),(m,n))
+x = np.insert(x,0,1,axis=1)
 
 
 def hypotesis(x, theta):
@@ -35,8 +37,3 @@ def gradient_Derivative(theta,alfa,m,y,x):
 
 
 gradient_Derivative(theta,alfa,m,y,x)
-
-
-
-
-
