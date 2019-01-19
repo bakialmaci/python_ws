@@ -17,7 +17,6 @@ def j_func(a, b):
     sum = 0
     for i in range(len(X)):
         sum += (h_func(a, b, X[i])-y[i])**2
-
     return sum/(2*len(X))
 
 
@@ -35,7 +34,7 @@ def derivative(a, b):
 
 
 def gradientDescent(a, b):
-    for i in range(7777):
+    for i in range(10000):
         der_a, der_b = derivative(a, b)
         a = a - 0.001*(der_a/len(X))
         b = b - 0.001*(der_b/len(y))
