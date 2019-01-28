@@ -69,7 +69,7 @@ def add_node(n):
     G.add_vertex(nodes[n][0])
 
 def add_edge(n1,n2):
-    G.add_edge(nodes[find_array_location(n1)[0]][0], nodes[find_array_location(n2)[0]][0], nodes[0][2][1])
+    G.add_edge(nodes[find_array_location(n1)][0], nodes[find_array_location(n2)][0], nodes[find_array_location(n1)][2][1])
 
 def find_location(x):
     try:
@@ -84,7 +84,7 @@ def find_array_location(x):
     try:
         for i in range(len(nodes)):
             if nodes[i][0]==x:
-              return i,0
+              return i
               break
     except:
         pass
@@ -105,18 +105,12 @@ add_node(3)
 add_node(4)
 add_node(5)
 
-add_edge()
+add_edge(1,2)
+add_edge(2,3)
+add_edge(3,4)
+add_edge(4,5)
+add_edge(5,6)
 
-#________________a__n_________a__c__n_________a__c__l__
-G.add_edge(nodes[0][0], nodes[0][2][0], nodes[0][2][1])
-G.add_edge(nodes[1][0], nodes[1][2][0], nodes[1][2][1])
-G.add_edge(nodes[1][0], nodes[1][3][0], nodes[1][3][1])
-G.add_edge(nodes[2][0], nodes[2][2][0], nodes[2][2][1])
-G.add_edge(nodes[2][0], nodes[2][3][0], nodes[2][3][1])
-G.add_edge(nodes[3][0], nodes[3][2][0], nodes[3][2][1])
-G.add_edge(nodes[4][0], nodes[4][2][0], nodes[4][2][1])
-G.add_edge(nodes[5][0], nodes[5][2][0], nodes[5][2][1])
-
-print("Shortest Path::",shortest_path(G, 1, 5))
+print("Shortest Path::",shortest_path(G, 1, 6))
 l = len(shortest_path(G,1,5))
 print("Target Coordinates::",find_location(shortest_path(G, 1, 5)[l-1]))
