@@ -1,6 +1,6 @@
 # Steghide Searcher
 
-Steghide Searcher is a simple python script to find hidden data in Last Significant Bit(LSB) of images.
+Steghide Searcher is a simple python script to find hidden data in Last Significant Bits(LSB) of images.
 
 Steghide comes from [Steghenography](https://searchsecurity.techtarget.com/definition/steganography).
 
