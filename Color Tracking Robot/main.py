@@ -3,6 +3,7 @@ from imutils.video import VideoStream
 import numpy as np
 import argparse
 import cv2
+import this
 import imutils
 import time
 import picamera
