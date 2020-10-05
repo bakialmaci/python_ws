@@ -1,4 +1,5 @@
 import sys
+print("dene")
 
 bits = ""
 steghedImage = sys.argv[1] #Image Path
