@@ -9,7 +9,7 @@ import numpy as np
 import argparse
 import cv2
 import imutils
-import time
+from time import sleep
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -36,7 +36,7 @@ else:
 	vs = cv2.VideoCapture(args["video"])
 
 # allow the camera or video file to warm up
-time.sleep(2.0)
+sleep(2.0)
 
 # keep looping
 while True:
