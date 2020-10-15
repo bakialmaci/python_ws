@@ -28,10 +28,7 @@ cv2.imwrite('edge.jpg',edge_detected_image)
 
 
 def square_control(x1,y1,x2,y2,x3,y3,x4,y4):
-    if -10 < (x1 - x3) - (y1 - y3) < 10:
-        return 1
-    else:
-        return 0
+    return 1 if (-10 < (x1 - x3) - (y1 - y3) < 10) else 0
 
 
 def rect_control(x1,y1,x2,y2,x3,y3,x4,y4):
